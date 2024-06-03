@@ -1,0 +1,360 @@
+@charset "utf-8";
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+
+
+.window {
+    border: 2px solid gray;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.window_size-resister {
+    width: 650px;
+    height: 750px;
+}
+
+.window_size-account {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.band {
+    width: 100%;
+    background-color: rgb(74, 187, 74);
+}
+
+.band_resister {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.band-top{
+    height: 170px;
+}
+
+.band-bottom{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    color: white;
+    font-size: 35px;
+    font-family: monospace;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container-account{
+    width: 40%;
+    height: 355px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+.text {
+    font-family: monospace;
+    font-size: 23px;
+    margin: 30px 0 10px 0;
+}
+.text-small{
+    font-family: monospace;
+    font-size: 18px;
+}
+.input-text {
+    font-family: monospace;
+    font-size: 18px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.input-text::placeholder{
+    color: rgb(147, 146, 146);
+}
+
+.input-text:focus {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(48, 182, 240, 1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(48, 182, 240, 1);
+    box-shadow: 0px 0px 10px 1px rgba(48, 182, 240, 1);
+}
+.radio{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.radio:checked{
+    border: 5px solid rgba(48, 182, 240, 1);
+}
+
+.margin-top{
+    margin-top: 30px;
+}
+.margin-right{
+    margin-right: 10px;
+}
+
+.appearence{
+    appearance: menulist;
+}
+
+.select{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+}
+
+.checkbox:checked{
+    appearance: checkbox;
+    background-color: rgba(48, 182, 240, 1);
+}
+
+.flex-topC{
+    display: flex;
+    align-items: center;
+}
+
+.button-resister{
+    font-size: 28px;
+    font-family: monospace;
+    color: white;
+    background-color: rgb(73, 214, 21);
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+.button-resister:hover{
+    background-color: rgb(48, 145, 13);
+}
+
+.button-resister:disabled{
+    background-color: rgb(43, 101, 21);
+}
+
+.button-resister:disabled:hover{
+    background-color: rgb(43, 101, 21);
+}
+
+
+
+.logo{
+    width: 170px;
+    height: 170px;
+    /* background-color: red; */
+    margin: -80px auto 0;
+    border: 15px solid white;
+    border-radius: 50%;
+}
+
+.logo-man{
+    background-image: url(../image/man.jpg);
+    /* width: 170px;
+    height: 170px; */
+    background-position: center;
+    background-size: 120%;
+}
+
+.logo-woman{
+    background-image: url(../image/woman.webp);
+    /* width: 170px;
+    height: 170px; */
+    background-position: center;
+    background-size: 120%;
+}
+
+.text-name{
+    font-family: monospace;
+    font-size: 28px;
+}
+
+.text-email{
+    font-family: monospace;
+    font-size: 22px;
+    color: gray;
+}
+.text-job{
+    font-family: monospace;
+    font-size: 25px;
+    color: gray;
+
+}
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-out{
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-family: monospace;
+    color: rgb(56, 169, 15);
+    border: 3px solid rgb(56, 169, 15);
+}
+
+.button-out:hover{
+    background-color: rgb(56, 169, 15);
+    color: white;
+}
+
+.margin-top20{
+    margin-top: 20px;
+}
+
+.margin-top15{
+    margin-top: 15px;
+}
+
+.margin-top25{
+    margin-top: 25px;
+}
+
+.margin-top50{
+    margin-top: 50px;
+}
+
+.fa-square-facebook, .fa-github, .fa-linkedin{
+    color: white;
+    font-size: 3em;
+}
+
+.margin-lr{
+    margin: 0 5px;
+}
+
+.dn{
+    display: none;
+}

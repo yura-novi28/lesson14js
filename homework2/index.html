@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/fontawesome-free-6.5.1-web/css/all.css">
+</head>
+<body>
+    <div id="windowOnReg" class="window window_size-resister">
+        <div class="band band_resister">
+            <h2 class="heading">Create your account</h2>
+        </div>
+        <div class="container">
+            <form name="formRegister">
+                <p class="text">First Name</p>
+                <input placeholder="type here...." class="input-text" name="fistName" type="text">
+                <p class="text">Second Name</p>
+                <input placeholder="type here...." class="input-text" name="secondName" type="text">
+                <p class="text">Email address</p>
+                <input placeholder="enter email" type="email" class="input-text" name="emailUser">
+                <div class="margin-top">
+                    <input name="gender" value="man" class="radio margin-right" type="radio" id="man"><span class="text margin-right"><label for="man">man</label></span>
+                    <input name="gender" value="woman" class="radio margin-right" type="radio" id="woman"><span class="text margin-right"><label for="woman">woman</label></span>
+                </div>
+                <p class="text">Position</p>
+                <select name="select" id="select" class="input-text select appearence">
+                    <option value="Choose">Choose...</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="QC/AQ">QC/AQ</option>
+                </select>
+                <div class="margin-top flex-topC">
+                    <input name="checkbox" id="checkbox" type="checkbox" class="checkbox margin-right"><span class="text-small"><label for="checkbox">I agree all statements in Terms of service</label></span>
+                </div>
+                <button id="buttonOn" disabled name="buttonRegister" class="button-resister">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div id="windowOn" class="window window_size-account" style="display: none;">
+        <div class="band band-top"></div>
+        <div class="container-account">
+            <div id="logoMan" class="logo logo-man" style="display: none;"></div>
+            <div id="logoWoman" class="logo logo-woman" style="display: none"></div>
+            <div class="flex-center">
+                <p id="nameUser" class="text-name margin-top20"></p>
+                <p id="emailUser" class="text-email margin-top15"></p>
+                <p id="jobUser" class="text-job margin-top25"></p>
+                <button id="buttonOff" class="button-out margin-top50">Sign Out</button>
+            </div>
+        </div>
+        <div class="band band-bottom">
+            <i class="fa-brands fa-square-facebook margin-lr"></i>
+            <i class="fa-brands fa-github margin-lr"></i>
+            <i class="fa-brands fa-linkedin margin-lr"></i>
+        </div>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
